@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aria 101</title>
+</head>
+<body>
+    <!-- View Accessibility Tree object through properties in the inspector -->
+
+    <!-- Standard Web Control -->
+    <!-- You can see that the Role is that of "check box" (44), that the Name is that of "Delete browsing history on exit", and that
+    the State when focused and checked is that of "FOCUSED CHECKED FOCUSABLE" (1048596 in IE11). The Accessibility Tree object
+    Role, Name, and State values on the web Checkbox match the software Checkbox control in the Operating System. -->
+    <input type="checkbox" checked title="Delete browsing history on exit" />
+
+    <!-- Simulated Web Controls using ARIA -->
+
+    <!-- Example 1. w/o aria -->
+    <!-- You can see that the Role is that of "grouping" (20), that the Name is that of "Delete browsing history on exit", and that
+    the State when focused is that of "FOCUSED FOCUSABLE" (1048580 in IE11). In essence, this is a standard SPAN element that
+    has been made focusable using tabindex, and includes a Title attribute, but is nothing more in the Accessibility Tree. There
+    is no mapping to a Checkbox control type with relevant State information on the Operating System. -->
+    <span tabindex="0" title="Delete browsing history on exit" class="checked" style="display:block;width:20px;height:20px;background-color:red;"></span>
+    
+    <!-- spacer -->
+    <div style="height: 10px"></div>
+
+    <!-- Example 2. w/ aria -->
+    <!-- Now, you can see that the Role is that of "check box" (44), that the Name is that of "Delete browsing history on exit",
+    and that the State when focused and checked is that of "FOCUSED CHECKED FOCUSABLE" (1048596 in IE11). The simulated Checkbox
+    control has now been mapped to its software equivalent on the Operating System, which makes it possible for Assistive Technologies
+    like screen readers to convey it properly by accessing supporting states and properties such as the "check box" role, the
+    current CHECKED state, and the accessible name. -->
+    <span tabindex="0" role="checkbox" aria-checked="true" title="Delete browsing history on exit" class="checked" style="display:block;width:20px;height:20px;background-color:red;"></span>
+
+</body>
+</html>
