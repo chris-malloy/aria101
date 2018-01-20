@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aria Drag and Drop</title>
+</head>
+<body>
+    <!-- Drag and drop element with Aria functionality are particularly tricky to implement because simply writing the respective aria attributes is not enough.  You must also write the proper javascript and css to program the keyboard and mouse commands. -->
+
+    <!-- There are three common implementations of aria drag and drop -->
+
+    <!-- Unassociated: Where components are draggable with no associated drop zone. -->
+
+    <!-- Example 1. drag handle element is used to initiate draggability -->
+    <div role="region" aria-label="Component Name">
+        <div class="dragHandle" tabindex="0" role="button" aria-label="Move Component Name" aria-grabbed="false"></div>
+        <div>
+            Content...
+        </div>
+    </div>
+
+    <!-- Example 2. draggable container element -->
+    <div class="draggable" tabindex="0" role="button" aria-labelledby="contentId" aria-grabbed="false">
+        <div id="contentId">
+            Movable content...
+        </div>
+    </div>
+
+    <div class="draggable" tabindex="0" role="button" aria-label="Move Component Name" aria-grabbed="false">
+        <div>
+            <img alt="" src="path/file.jpg" />
+        </div>
+    </div>
+
+    <img class="draggable" tabindex="0" role="button" aria-label="Move Component Name" aria-grabbed="false" src="path/file.jpg"
+    />
+
+    <!-- Includes visual indication of draggability for both sighted and non-sighted users. -->
+    <div role="region" aria-label="Component Name">
+        <div class="dragHandle" tabindex="0" role="button" aria-label="Move Component Name" aria-grabbed="false" aria-describedby="tooltipId"></div>
+        <div style="display:none;" id="tooltipId" role="tooltip"> Press the arrow keys to move Component Name </div>
+        <div>
+            Content...
+        </div>
+    </div>
+    
+</body>
+</html>

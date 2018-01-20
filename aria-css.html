@@ -1,0 +1,33 @@
+<html>
+<head> 
+    <title>Aria Css</title>
+    <!-- Note the css rules listed here.
+        In order to properly style aria components, and maintain integry of accessability tree, as well as increase speed of DOM rendering, write css rules so the are only applied when a given DOM element with required aria attributes has been created. -->
+    <style type="text/css"> 
+        a[role="button"][aria-pressed="true"][href] { 
+        /* Add styling for a pressed toggle button. */ 
+        color: purple; background-color: yellow; 
+        } 
+
+        a[role="button"][aria-pressed="false"][href] { 
+        /* Add styling for a toggle button that is not pressed. */ 
+        color: yellow; background-color: purple; 
+        } 
+
+        span[role="button"][tabindex] { 
+        /* Add styling for a standard button. */ 
+        color: yellow; background-color: black; 
+        } 
+    </style> 
+</head>
+<body> 
+
+    <a role="button" aria-pressed="true" href="#"> 
+    Spell Check 
+    </a> 
+    <span role="button" tabindex="0"> 
+    Login 
+    </span> 
+    
+</body>
+</html>

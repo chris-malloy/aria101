@@ -136,6 +136,14 @@ The Supported States and Properties document specifies all available states and 
 
 [live demo](http://whatsock.com/tsg/Coding%20Arena/ARIA%20Toggles,%20Checkboxes,%20Links,%20and%20Buttons/ARIA%20Toggle%20Buttons/demo.htm)
 
+## Aria Drag and Drop
+
+##### There are 3 implementations of aria drag and drop.
+
+* Unassociated: Where components are draggable with no associated drop zone.
+* Associated: where drag and drop components require that the dragged component be dropped within the region of a drop zone.
+* Internal: where drag and drop components consist of the draggable children of a parent control type.
+
 ## General Notes
 Aria, or Accessible Rich Internet Applications, is is a set of attributes that define ways to make Web content and Web applications (especially those developed with Ajax, JavaScript and more recent web technologies like Bootstrap) more accessible to people with disabilities. For example, ARIA enables accessible navigation landmarks, JavaScript widgets, form hints and error messages, live content updates, and more.
 [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
