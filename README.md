@@ -104,7 +104,7 @@ Attributes that are essential to the nature of a given object, or that represent
 ##### Relationship
 A connection between two distinct things. Relationships may be of various types to indicate which object labels another, controls another, etc.
 
-#####Role
+##### Role
 Main indicator of type. This semantic association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.
 
 ##### Semantics
